@@ -14,6 +14,7 @@ const cartItems = document.querySelector(".cart-items");
 const cartTotal = document.querySelector(".cart-total");
 const cartContent = document.querySelector(".cart-content");
 const productsDOM = document.querySelector(".products-center");
+const bannerBtn = document.querySelector(".banner-btn");
 
 // cart
 let cart = [];
@@ -137,6 +138,9 @@ class UI{
         this.populateCart(cart);
         cartBtn.addEventListener('click',this.showCart);
         closeCartBtn.addEventListener('click',this.hideCart);
+        bannerBtn.addEventListener('click', ()=>{
+            document.querySelector(".products-center").scrollIntoView({ behavior: 'smooth', block: 'end'});   
+        });
     }
     populateCart(cart){
         cart.forEach(item => this.addCartItem(item));
