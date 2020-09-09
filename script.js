@@ -147,8 +147,19 @@ class UI {
 				.querySelector(".products-center")
 				.scrollIntoView({ behavior: "smooth", block: "end" });
 		});
-		navIcon.addEventListener("mouseover", () => {
+		navIcon.addEventListener("click", event => {
+			const tempBtn = event.currentTarget.getBoundingClientRect();
+			const center = (tempBtn.left + tempBtn.right) / 2 - 50;
+			const bottom = tempBtn.bottom + 30;
+			submenu.style.left = `${center}px`;
+			submenu.style.top = `${bottom}px`;
 			submenu.classList.add("show");
+			submenu.innerHTML = `
+									<h1>
+										Welcome to our store
+										<i class = "fas fa-door-open"></i>
+									</h1>
+                                `;
 		});
 		navbar.addEventListener("mouseover", function (e) {
 			if (!e.target.classList.contains("nav-icon")) {

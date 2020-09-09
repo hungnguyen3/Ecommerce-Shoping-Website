@@ -67,12 +67,12 @@ body {
 .submenu {
 	background: rgba(225, 225, 225, 0.8);
 	position: absolute;
-	top: 4rem;
-	left: 5%;
-	z-index: 3;
 	display: none;
 	padding: 2rem;
 	border-radius: 50%;
+}
+.submenu h1 {
+	color: var(--primaryColor);
 }
 .submenu.hide {
 	display: none;
